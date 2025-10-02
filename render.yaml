@@ -1,0 +1,10 @@
+  - type: web
+    name: kbank-webhook
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn web:app --host 0.0.0.0 --port $PORT"
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: WEBHOOK_SECRET
+        value: KBRIDGE_9f8a1c2b0e4a4a7f
